@@ -23,6 +23,17 @@
                         </div>
                     </form>
                 </div>
+                <div class="pannel-body">
+                    <form action="" method="POST" class="form-inline" role="form">
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="Input field">
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" placeholder="Input field">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
                 <div class="col-md-4">
                     <form action="{{ route('bill.create') }}">
                         <button type="submit" class="btn btn-fill btn-rose ">Thêm Bill</button>

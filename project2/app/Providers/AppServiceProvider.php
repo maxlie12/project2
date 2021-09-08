@@ -2,9 +2,13 @@
 
 namespace App\Providers;
 
+use App\Models\Bill;
+use App\Models\Student;
+use Illuminate\Support\Facades\View;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\View\View as ViewView;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -33,5 +37,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
+        View::share('key', 'value');
+        view()->composer('*', function ($view) {
+            $view->with([
+                'student_count' => Student::where('available', 0)->count(),
+                'bill_count' => Bill::where('status', 0)->count(),
+            ]);
+        });
     }
 }

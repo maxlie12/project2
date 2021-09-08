@@ -27,7 +27,12 @@ use App\Http\Controllers\StudentUnregisteredController;
 
 Route::middleware([checklogin::class])->group(function () {
     Route::get('/', function () {
-        return view('dashboard');
+        // $student = \App\Models\Student::all();
+        // $bill = \App\Models\Bill::first();
+        // $bill->students()->attach($student);
+        // dd($student);
+
+        return view('layout.dashboard');
     })->name('dashboard');
     Route::post('/grade/store', [GradeController::class, 'store'])->name('store');
     Route::get('/grade/create', [GradeController::class, 'create']);

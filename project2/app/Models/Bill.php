@@ -11,4 +11,9 @@ class Bill extends Model
     protected $table = 'bill';
     public $timestamps = false;
     public $primaryKey = 'idBill';
+
+    public function Students()
+    {
+        return $this->belongsToMany(Bill::class);
+    }
 }

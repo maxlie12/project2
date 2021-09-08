@@ -32,19 +32,22 @@
                                         <tr>
                                             <th>idStudent</th>
                                             <th>nameStudent</th>
+                                            <th>nameBook</th>
                                             <th>nameSubject</th>
                                             <th>Course</th>
-                                            <th>amout</th>
+                                            <th></th>
                                             <th>book register</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>id học sinh</th>
                                             <th>tên học sinh</th>
-                                            <th>giới tính</th>
+                                            <th>tên sách đã đang ký</th>
                                             <th>Khóa học</th>
-                                            <th>số lượng</th>
+                                            <th>tên môn</th>
+                                            <th>lớp</th>
                                             <th>sách đã đang ký</th>
                                         </tr>
                                     </tfoot>
@@ -54,8 +57,9 @@
                                                 <tr class="info">
                                                     <td>{{ $student->idStudent }}</td>
                                                     <td>{{ $student->nameStudent }}</td>
-                                                    <td>{{ $student->birthday }}</td>
-                                                    <td>{{ $student->GenderName }}</td>
+                                                    <td>{{ $student->nameBook }}</td>
+                                                    <td>{{ $student->nameCourse }}</td>
+                                                    <td>{{ $student->nameSubject }}</td>
                                                     <td>{{ $student->NameGrade }}</td>
                                                     <td>{{ $student->AvailableText }}</td>
                                                     <td class="td-actions text-left">
@@ -79,6 +83,10 @@
                 <!-- end col-md-12 -->
             </div>
             <!-- end row -->
+            </table>
+            {{ $listStudent->links('pagination::bootstrap-4') }}
+
+            </table>
         </div>
     </div>
 @endsection

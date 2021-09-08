@@ -46,16 +46,19 @@
                                     </tfoot>
                                     <tbody>
                                         @foreach ($listStudent as $student)
-                                            <tr>
-                                                <td>{{ $student->idStudent }}</td>
-                                                <td>{{ $student->nameStudent }}</td>
-                                                <td>{{ $student->nameSubject }}</td>
-                                                <td>{{ $student->nameCourse }}</td>
-                                                <td class="text-right">
-                                                    <a href="#" class="btn btn-simple btn-info btn-icon like"><i
-                                                            class="material-icons">favorite</i></a>
-                                                </td>
-                                            </tr>
+                                            @if ($student->available == 0)
+                                                <tr>
+                                                    <td>{{ $student->idStudent }}</td>
+                                                    <td>{{ $student->nameStudent }}</td>
+                                                    <td>{{ $student->nameSubject }}</td>
+                                                    <td>{{ $student->nameCourse }}</td>
+                                                    <td class="text-right">
+                                                        <a href="#" class="btn btn-simple btn-info btn-icon like"><i
+                                                                class="material-icons">favorite</i></a>
+                                                    </td>
+                                                </tr>
+                                            @endif
+
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -68,6 +71,10 @@
                 <!-- end col-md-12 -->
             </div>
             <!-- end row -->
+            </table>
+            {{ $listStudent->links('pagination::bootstrap-4') }}
+
+            </table>
         </div>
     </div>
 @endsection

@@ -7,8 +7,8 @@
                     <i class="material-icons">weekend</i>
                 </div>
                 <div class="card-content">
-                    <p class="category">Sách</p>
-                    <h3 class="card-title">184</h3>
+                    <p class="category">Book</p>
+                    <h3 class="card-title">Sách</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -24,8 +24,8 @@
                     <i class="material-icons">equalizer</i>
                 </div>
                 <div class="card-content">
-                    <p class="category">học sinh</p>
-                    <h3 class="card-title">75.521</h3>
+                    <p class="category">Số học sinh</p>
+                    <h3 class="card-title">Student</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -41,8 +41,8 @@
                     <i class="material-icons">store</i>
                 </div>
                 <div class="card-content">
-                    <p class="category">Revenue</p>
-                    <h3 class="card-title">hóa đơn</h3>
+                    <p class="category">hoá đơn của học sinh</p>
+                    <h3 class="card-title">Bill</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">
@@ -58,8 +58,8 @@
                     <i class="fa fa-twitter"></i>
                 </div>
                 <div class="card-content">
-                    <p class="category">Followers</p>
-                    <h3 class="card-title">Thống kê</h3>
+                    <p class="category">Thống kê</p>
+                    <h3 class="card-title">List</h3>
                 </div>
                 <div class="card-footer">
                     <div class="stats">

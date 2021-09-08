@@ -19,14 +19,19 @@ class StudentNotGotBookController extends Controller
     public function index(Request $request)
     {
         $search = $request->get('search');
-        $liststudent = Student::join("bill", "student.idBill", '=', 'bill.idBill')
+        $liststudent = Student::join("grade", "student.idGrade", "=", "grade.idGrade")
             ->where('nameStudent', 'like', "%$search%")
             ->paginate(5);
         $listGrade = Grade::all();
+        $listBill = Bill::all();
+        if (Student::where('available', 1)) {
+            $listBill = Bill::where('status', 0)->get();
+        }
         return view("listStudentNotGot.index", [
             "listStudent" => $liststudent,
             "search" => $search,
             "listGrade" => $listGrade,
+            "listBill" => $listBill,
         ]);
     }
 
@@ -59,7 +64,7 @@ class StudentNotGotBookController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::find($id);
     }
 
     /**

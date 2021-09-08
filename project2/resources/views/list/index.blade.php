@@ -80,6 +80,10 @@
                 <!-- end col-md-12 -->
             </div>
             <!-- end row -->
+            </table>
+            {{ $listBook->links('pagination::bootstrap-4') }}
+
+            </table>
         </div>
     </div>
 @endsection

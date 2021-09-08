@@ -15,19 +15,17 @@ class StudentUnregisteredController extends Controller
         $search = $request->get('search');
         $listSubject = Subject::all();
         $listCourse = Course::all();
-        $listBill = Bill::all();
         $listStudent =  DB::table('student')
             ->join('grade', 'student.idStudent', '=', 'grade.idGrade')
             ->join('course', 'student.idStudent', '=', 'course.idCourse')
             ->join('subject', 'student.idStudent', '=', 'subject.idSubject')
             ->select('student.*', 'grade.nameGrade', 'course.nameCourse', 'subject.nameSubject')
-            ->where('nameStudent', 'like', "%$search%")->paginate(2);
+            ->where('nameStudent', 'like', "%$search%")->paginate();
         return view('listStudentUnregistered.index', [
             'listStudent' => $listStudent,
             'search' => $search,
             'listSubject' => $listSubject,
             'listCourse' => $listCourse,
-            'listBill' => $listBill,
         ]);
     }
 }

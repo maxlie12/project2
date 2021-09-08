@@ -27,8 +27,8 @@ class Student extends Model
             return "Chưa đăng kí";
         }
     }
-    public function bill()
+    public function bills()
     {
-        return $this->hasMany(Bill::class);
+        return $this->belongsToMany(Bill::class);
     }
 }
